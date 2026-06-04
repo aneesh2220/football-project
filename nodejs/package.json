@@ -1,0 +1,22 @@
+{
+  "name": "thomas",
+  "version": "1.0.0",
+  "description": "its an amazing project",
+  "license": "ISC",
+  "author": "thomas",
+  "type": "commonjs",
+  "main": "serverr.js",
+  "scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+},
+  "dependencies": {
+    "axios": "^1.17.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
