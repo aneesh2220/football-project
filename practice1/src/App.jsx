@@ -5,17 +5,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://YOUR-RENDER-URL.onrender.com/standings")
-      .then((res) => res.json())
-      .then((data) => {
-        setTable(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []);
+  fetch("https://your-backend.onrender.com/standings")
+    .then((res) => res.json())
+    .then((data) => setTeams(data));
+}, []);
 
   if (loading) {
     return <h1>Loading...</h1>;
