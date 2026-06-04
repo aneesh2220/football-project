@@ -5,7 +5,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  fetch("https://your-backend.onrender.com/standings")
+ fetch("https://football-project-backend.onrender.com/standings")
     .then((res) => res.json())
     .then((data) => setTeams(data));
 }, []);

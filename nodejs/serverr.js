@@ -4,7 +4,11 @@ const fs = require("fs");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://football-project-murex.vercel.app",
+  }),
+);
 app.get("/standings", async (req, res) => {
   try {
     const token = process.env.FOOTBALL_API_KEY;
@@ -15,7 +19,7 @@ app.get("/standings", async (req, res) => {
         headers: {
           "X-Auth-Token": token,
         },
-      }
+      },
     );
 
     const footballData = await response.json();
@@ -24,4 +28,10 @@ app.get("/standings", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
