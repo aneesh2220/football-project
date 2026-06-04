@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #1a1a1a;
+  font-size: 40px;
+}
+
+.header p {
+  color: #666;
+  margin-top: 10px;
+}
+
+.table-container {
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #0057b8;
+}
+
+thead th {
+  color: white;
+  padding: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e6e6e6;
+  transition: 0.3s;
+}
+
+tbody tr:hover {
+  background: #f8fbff;
+}
+
+tbody td {
+  color: #222;
+  text-align: center;
+  padding: 18px;
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.team-info img {
+  width: 38px;
+  height: 38px;
+}
+
+.position {
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf2ff;
+  color: #0057b8;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.points {
+  color: #0057b8;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.top-four {
+  background: rgba(0, 180, 90, 0.05);
+}
+
+.top-four .position {
+  background: #00b45a;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .team-info img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+
+  margin: 30px 0;
+
+  background: linear-gradient(
+    90deg,
+    #37003c,
+    #6c0ba9,
+    #00ff87
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  letter-spacing: -2px;
+
+  text-transform: uppercase;
+
+  text-shadow: 0 8px 25px rgba(108, 11, 169, 0.15);
+
+  position: relative;
+}
+
+.main-title::after {
+  content: "";
+
+  display: block;
+
+  width: 180px;
+  height: 5px;
+
+  margin: 15px auto 0;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #37003c,
+    #6c0ba9,
+    #00ff87
+  );
+}
