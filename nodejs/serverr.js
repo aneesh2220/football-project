@@ -3,14 +3,11 @@ const cors = require("cors");
 const fs = require("fs");
 
 const app = express();
-app.use(
-  cors({
-    origin: [
-      "https://football-fca92.web.app",
-      "http://localhost:3000"
-    ],
-  })
-);
+app.use(cors({
+  origin: [
+    "https://football-project-murex.vercel.app/"
+  ]
+}));
 app.get("/standings", async (req, res) => {
   try {
     const token = process.env.FOOTBALL_API_KEY;
