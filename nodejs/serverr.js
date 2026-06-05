@@ -3,12 +3,11 @@ const cors = require("cors");
 const fs = require("fs");
 
 const app = express();
-
 app.use(
   cors({
     origin: [
       "https://football-fca92.web.app",
-      "https://football-project-murex.vercel.app"
+      "http://localhost:3000"
     ],
   })
 );
