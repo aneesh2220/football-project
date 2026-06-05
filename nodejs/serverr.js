@@ -6,8 +6,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://football-project-murex.vercel.app",
-  }),
+    origin: [
+      "https://football-fca92.web.app",
+      "https://football-project-murex.vercel.app"
+    ],
+  })
 );
 app.get("/standings", async (req, res) => {
   try {
