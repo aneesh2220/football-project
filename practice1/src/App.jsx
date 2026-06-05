@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 function App() {
-  const [table, setTable] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [teams, setTeams] = useState([]);
   useEffect(() => {
- fetch("https://football-project-1-qf5x.onrender.com/standings")
-    .then((res) => res.json())
-    .then((data) => setTeams(data));
-}, []);
-
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
-
+    fetch("https://football-project-1-qf5x.onrender.com/standings")
+      .then((res) => {
+        if (!res.ok) throw new Error("Network response failed");
+        return res.json();
+      })
+      .then((data) => {
+        console.log("DATA RECEIVED:", data);
+        setTeams(data);
+      })
+      .catch((err) => {
+        console.log("FETCH ERROR:", err);
+      });
+  }, []);
+ if (!teams || teams.length === 0) {
+  return <h2>Loading...</h2>;
+}
   return (
     <div style={{ padding: "20px" }}>
-     <div className="main_heading">
-      <h1 className="main-title">Premier League Standings</h1>
-      </div> 
+      <div className="main_heading">
+        <h1 className="main-title">Premier League Standings</h1>
+      </div>
 
       <table
         style={{
@@ -40,7 +46,7 @@ function App() {
         </thead>
 
         <tbody>
-          {table.map((team) => (
+          {teams.map((team) => (
             <tr key={team.team.id}>
               <td>{team.position}</td>
 
